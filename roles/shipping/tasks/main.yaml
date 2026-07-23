@@ -14,13 +14,13 @@
     tasks_from: systemd-setup.yaml
 
 
-- name: Install python dependencies
-  ansible.builtin.dnf:
+- name: Install Python dependencies
+  ansible.builtin.pip:
     name: "{{ item }}"
     executable: pip3.9
   loop:
-  - cryptograpy
-  - pymysql
+    - cryptography
+    - PyMySQL
 
 - name: import shipping data
   community.mysql.mysql_db:
