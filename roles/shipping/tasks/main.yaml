@@ -16,7 +16,7 @@
 
 - name: Install python dependencies
   ansible.builtin.dnf:
-    name: "{{ item }}""
+    name: "{{ item }}"
     executable: pip3.9
   loop:
   - cryptograpy
