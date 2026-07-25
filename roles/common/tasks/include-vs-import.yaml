@@ -1,5 +1,5 @@
 - name: message-1
-  ansible.builtin.debug:
+  ansible.builtin.degbug:
     msg: "Hi Message From 1 "
 
 - name: message-2
