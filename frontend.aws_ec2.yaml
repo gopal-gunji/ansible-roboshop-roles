@@ -12,4 +12,4 @@ keyed_groups:
 #- prefix: ""
  # key: tags.Name
 - seperator: ''
-  key: frontend
+  key: tags.Component
