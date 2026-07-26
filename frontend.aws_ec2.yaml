@@ -8,6 +8,11 @@ filters:
   tag:Name: frontend
 compose:
   ansible_host: private_ip_address
+#keyed_groups:
+#- seperator: ''
+  #key: tags.Component
+
 keyed_groups:
-- seperator: ''
-  key: tags.Component
+- key: tags.Component
+  prefix: ""
+  leading_separator: false
