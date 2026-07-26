@@ -5,31 +5,26 @@
 # - private-ip-address
 # filters:
 #   instance-state-name : running
-#   tag:Name: frontend
+#   tag:Name: frontend-dev
 # compose:
 #   ansible_host: private_ip_address
 # keyed_groups:
 # - seperator: ''
-#   key: tags.Component
+#   key: tags.Name | regex_replace('-.*$', '')
 
 
 
 plugin: amazon.aws.aws_ec2
-
 regions:
   - us-east-1
-
 hostnames:
   - private-ip-address
-
 filters:
   instance-state-name: running
-  tag:Name: frontend
-
+  tag:Name: frontend-dev
 compose:
   ansible_host: private_ip_address
-
 keyed_groups:
-  - key: tags.Name # | regex_replace('-.*$', '')
+  - key: tags.Name 
     prefix: ""
     separator: ""
